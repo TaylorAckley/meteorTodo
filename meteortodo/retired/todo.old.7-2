@@ -1,0 +1,15 @@
+<template name="todo">
+
+<div class="well well-lg" data-id="{{ _id }}">
+
+    <h3>{{ title }}</h3>
+
+    {{ #each indexedArray todos }}
+        <a href="#" class="todoindex btn btn-primary btn-block" data-id="{{ _index }}">
+            <span class="description pull-right">{{ description }}</span>
+            <span class="due">{{ due }}</span>
+        </a>
+    {{ /each }}
+
+</div>
+</template>

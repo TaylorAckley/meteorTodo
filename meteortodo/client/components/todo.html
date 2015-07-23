@@ -3,11 +3,15 @@
 <div class="well well-lg" data-id="{{ _id }}">
 
     <h3>{{ title }}</h3>
+    <h3>{{ description }}</h3>
+    <h3>{{ due }}</h3>
+    <h3>{{ priority }}</h3>
 
-    {{ #each indexedArray choices }}
+    {{ #each indexedArray categories }}
+    <span class="due">{{ category }}</span>
         <a href="#" class="todoindex btn btn-primary btn-block" data-id="{{ _index }}">
-            <span class="description pull-right">{{ description }}</span>
-            <span class="due">{{ due }}</span>
+            <span class="description pull-right">{{ category }}</span>
+
         </a>
     {{ /each }}
 
