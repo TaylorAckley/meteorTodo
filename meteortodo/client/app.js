@@ -19,3 +19,14 @@ UI.registerHelper('indexedArray', function(context, options) {
     });
   }
 });
+
+// Use UI.registerHelper..
+UI.registerHelper("formatDate", function(datetime) {
+  if (moment) {
+    // can use other formats like 'lll' too
+    return moment(datetime).format("dddd, MMMM Do YYYY");
+  }
+  else {
+    return datetime;
+  }
+});

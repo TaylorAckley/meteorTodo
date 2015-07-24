@@ -15,7 +15,11 @@ Template.todoForm.events({
       categories: [
         {  category: event.target.category.value}
       ],
-      isComplete: true
+      isComplete: false,
+      userid: Meteor.userId(),
+      CreatedOn: new Date(),
+      userList: 'default'
+
     };
 
     // create the new poll

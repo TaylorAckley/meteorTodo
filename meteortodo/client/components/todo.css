@@ -15,12 +15,9 @@ margin: auto;
 
 }
 
-.todoentry .markcomplete {
-  width: 15%;
-}
-
-.todoentry .markcomplete input {
+.markcomplete {
   color: red;
+  text-decoration: line-through;
 }
 
 .todoentry .title {
