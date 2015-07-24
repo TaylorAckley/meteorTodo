@@ -2,19 +2,45 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.todoentry p {
-  width: 100%;
+.todoentry li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: inline-block;
+}
+
+.todoentry li ul {
+
+margin: auto;
+
+}
+
+.todoentry .markcomplete {
+  width: 15%;
+}
+
+.todoentry .markcomplete input {
+  color: red;
 }
 
 .todoentry .title {
-  width: 20%;
+  width: 15%;
 }
 
+.todoentry .category {
+  width: 15%;
+}
+
+.todoentry .priority {
+  width: 15%;
+}
+
+
 .todoentry .description {
-  width: 20%;
+  width: 15%;
 }
 
 .todoentry .due {
-  width: 20%;
+  width: 15%;
   text-decoration: underline;
 }

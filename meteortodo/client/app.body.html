@@ -1,5 +1,12 @@
 <body>
 
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+
+        {{ >header }}
+    </div><!-- /.container-fluid -->
+    </nav>
+
   <!-- PULL IN THE TODO CREATION FORM -->
   <div class="container todoFormSec">
     <div class="row">
@@ -13,7 +20,7 @@
   <div class="container todoFormSec">
     <div class="row">
       <div class="col-md-8 pull-right">
-      <h1 class="todocountstyle">You Have {{ todoCount }} Todos</h1>
+      <h1 class="todocountstyle text-right">You Have {{ todoCount }} Todos</h1>
     </div>
     </div>
     <div class="row">

@@ -1,13 +1,19 @@
 <template name="todo">
 <div class="well todoentry" data-id="{{ _id }}">
-  <p>
-    <span class="title">{{ title }}</span>
-    <span class="description">{{ description }}</span>
-    <span class="due">{{ due }}</span>
-    <span class="priority">{{ priority }}</span>
+    <ul class="text-center">
+    <li class="check"><input type="checkbox" checked="{{checked}}" class="toggle-checked" /></li>
+    <li class="title">{{ title }}</li>
+    <li class="description">{{ description }}</li>
+    <li class="due">{{ due }}</li>
+    <li class="priority">{{ priority }}</li>
     {{ #each indexedArray categories }}
-    <span class="category">{{ category }}</span>
+    <li class="category">{{ category }}</li>
     {{ /each }}
-  </p>
+    <li class="pull-right">
+      <span class="fa-stack fa-md">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-close fa-stack-1x fa-inverse"></i>
+      </span></li>
+  </ul>
 </div>
 </template>

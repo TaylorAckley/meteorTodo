@@ -14,7 +14,8 @@ Template.todoForm.events({
       priority: event.target.priority.value,
       categories: [
         {  category: event.target.category.value}
-      ]
+      ],
+      isComplete: true
     };
 
     // create the new poll
