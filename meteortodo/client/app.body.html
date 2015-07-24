@@ -1,19 +1,30 @@
 <body>
 
   <!-- PULL IN THE TODO CREATION FORM -->
-  <div class="container">
+  <div class="container todoFormSec">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-12">
         {{ >todoForm }}
       </div>
     </div>
   </div>
 
   <!-- LOOP OVER TODOS AND SHOW EACH -->
-  <div class="todos">
-      {{ #each todos }}
-          {{ >todo }}
-      {{ /each }}
+  <div class="container todoFormSec">
+    <div class="row">
+      <div class="col-md-8 pull-right">
+      <h1 class="todocountstyle">You Have {{ todoCount }} Todos</h1>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="todos">
+            {{ #each todos }}
+                {{ >todo }}
+            {{ /each }}
+        </div>
+        </div>
+    </div>
   </div>
 
 </body>

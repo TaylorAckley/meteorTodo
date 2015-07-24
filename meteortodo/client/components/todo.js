@@ -1,3 +1,7 @@
+Template.todo.helpers({
+
+});
+
 // attach events to our poll template
 Template.todo.events({
 
@@ -17,7 +21,7 @@ Template.todo.events({
     action[voteString] = 1;
 
     // increment the number of votes for this choice
-    Polls.update(
+    Todos.update(
       { _id: todoID },
       { $inc: action }
     );

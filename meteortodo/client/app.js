@@ -2,6 +2,10 @@ Template.body.helpers({
 
   todos: function() {
     return Todos.find();
+  },
+
+  todoCount: function() {
+    return Todos.find().count();
   }
 
 });
