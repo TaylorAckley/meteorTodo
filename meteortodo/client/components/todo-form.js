@@ -15,7 +15,6 @@ Template.todoForm.events({
       categories: [
         {  category: event.target.category.value}
       ],
-      isComplete: false,
       userid: Meteor.userId(),
       CreatedOn: new Date(),
       userList: 'default'
