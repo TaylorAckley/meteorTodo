@@ -14,8 +14,15 @@ Template.register.events({
         Accounts.createUser(user,function(err){
             if(!err) {
                 Router.go('/home');
-                Session.set('currentUser', this.userId());
             }
+        });
+
+        Accounts.onCreateUser(function(options, user) {
+            if (options.profile) {
+                options.profile.picture = "http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large";
+                user.profile = options.profile;
+            }
+            return user;
         });
     }
 });
