@@ -1,11 +1,13 @@
 Template.home.helpers({
 
   todos: function() {
-    return Todos.find();
+    console.log("User is: " + Meteor.userId());
+    return Todos.find({userid: this.userId});
   },
 
+
   todoCount: function() {
-    return Todos.find().count();
+    return Todos.find({userid: Meteor.userId()}).count();
   }
 
 });
