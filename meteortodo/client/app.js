@@ -1,4 +1,4 @@
-Template.body.helpers({
+Template.home.helpers({
 
   todos: function() {
     return Todos.find();
@@ -25,6 +25,16 @@ UI.registerHelper("formatDate", function(datetime) {
   if (moment) {
     // can use other formats like 'lll' too
     return moment(datetime).format("dddd, MMMM Do YYYY");
+  }
+  else {
+    return datetime;
+  }
+});
+
+UI.registerHelper("daysSince", function(datetime) {
+  if (moment) {
+    // can use other formats like 'lll' too
+    return moment(datetime).fromNow();
   }
   else {
     return datetime;

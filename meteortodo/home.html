@@ -1,0 +1,45 @@
+
+<template name="Home">
+<head>
+  <meta charset="utf-8">
+  <title>meteorTodo</title>
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans|Roboto|Slabo+27px' rel='stylesheet' type='text/css'>
+  <!-- CSS IS AUTOMATICALLY BUILT AND LOADED -->
+</head>
+
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+
+        {{ >header }}
+    </div><!-- /.container-fluid -->
+    </nav>
+
+  <!-- PULL IN THE TODO CREATION FORM -->
+  <div class="container todoFormSec">
+    <div class="row">
+      <div class="col-md-12">
+        {{ >todoForm }}
+      </div>
+    </div>
+  </div>
+
+  <!-- LOOP OVER TODOS AND SHOW EACH -->
+  <div class="container todoFormSec">
+    <div class="row">
+      <div class="col-md-8 pull-right">
+      <h1 class="todocountstyle text-right">You Have {{ todoCount }} Todos</h1>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="todos">
+            {{ #each todos }}
+                {{ >todo }}
+            {{ /each }}
+        </div>
+        </div>
+    </div>
+  </div>
+</body>
+</template>

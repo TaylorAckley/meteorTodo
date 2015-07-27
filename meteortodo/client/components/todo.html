@@ -8,10 +8,12 @@
       <li class="description">{{ description }}</li>
       <li class="due">{{ due }}</li>
       <li class="priority">{{ priority }}</li>
+      <li class="category">
       {{ #each indexedArray categories }}
-      <li class="category">{{ category }}</li>
+      #{{ this }}&nbsp;
       {{ /each }}
-      <li class="priority">{{formatDate CreatedOn}}</li>
+      </li>
+      <li class="priority">{{formatDate CreatedOn}} ({{daysSince CreatedOn}})</li>
       <li class="pull-right">
         <a class="delete">
           <span class="fa-stack fa-md">
