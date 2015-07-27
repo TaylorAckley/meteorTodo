@@ -2,7 +2,7 @@ Template.home.helpers({
 
   todos: function() {
     console.log("User is: " + Meteor.userId());
-    return Todos.find({userid: this.userId});
+    return Todos.find({userid: Meteor.userId()});
   },
 
 

@@ -1,0 +1,28 @@
+<template name="todo">
+  <div class="well todoentry" data-id="{{ _id }}">
+    <ul class="text-center">
+      <li class="check">
+        <input type="checkbox" checked="{{isComplete}}" class="toggle-checked" />
+      </li>
+      <li class="title {{#if isComplete}}markcomplete{{/if}}">{{ title }}</li>
+      <li class="description">{{ description }}</li>
+      <li class="due">{{ due }}</li>
+      <li class="priority">{{ priority }}</li>
+      <li class="category">
+      {{ #each indexedArray categories }}
+      #{{ this }}&nbsp;
+      {{ /each }}
+      </li>
+      <li class="priority">{{formatDate CreatedOn}} ({{daysSince CreatedOn}})</li>
+      <li class="pull-right">
+        <a class="delete">
+          <span class="fa-stack fa-md">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-close fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</template>
