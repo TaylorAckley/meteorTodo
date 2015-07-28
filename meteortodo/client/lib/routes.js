@@ -12,6 +12,19 @@ Router.onBeforeAction(function() {
   only: ['profile', 'home']
 });
 
+Router.onBeforeAction(function() {
+  if (Meteor.userId()) {
+    this.render('home');
+  }
+  else {
+    this.next();
+  }
+},
+
+{
+  only: ['/', 'register']
+});
+
 Router.route('/home', function () {
   this.render('home');
 });
