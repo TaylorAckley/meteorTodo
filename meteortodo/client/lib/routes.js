@@ -1,6 +1,9 @@
-Router.configure({
-  layoutTemplate: 'applicationLayout',
-
+Router.onBeforeAction(function() {
+  if (! Meteor.userId()) {
+    this.render('login');
+  } else {
+    this.next();
+  }
 });
 
 Router.route('/home', function () {
@@ -17,4 +20,5 @@ Router.route('/', function () {
 
 Router.route('/profile', function () {
     this.render('profile');
+
 });

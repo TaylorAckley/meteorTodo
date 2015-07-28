@@ -18,5 +18,16 @@ Template.login.events({
                 Router.go('/home');
             }
         });
+    },
+
+    'click .btn-twitter':function(event){
+        event.preventDefault();
+        Meteor.loginWithTwitter(function(err){
+            if(!err) {
+                Router.go('/home');
+            }
+        });
     }
+
+
 });
