@@ -1,8 +1,11 @@
+Meteor.subscribe('theTodos');
+
 Template.home.helpers({
 
   todos: function() {
     console.log("User is: " + Meteor.userId());
-    return Todos.find({userid: Meteor.userId()});
+    //return Todos.find({userid: Meteor.userId()});
+    return Todos.find();
   },
 
 
