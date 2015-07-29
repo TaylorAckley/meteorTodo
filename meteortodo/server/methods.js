@@ -5,12 +5,12 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
-    Todos.insert(user);
+    Todos.insert(newTodo);
   },
   deleteTodo: function (taskId) {
     Todos.remove(taskId);
   },
   toggleChecked: function (taskId, todoState) {
-    Todos.update(taskId, { $set: { isComplete: ! todoState} });
+    Todos.update(taskId, { $set: { isComplete: todoState} });
   }
 });
