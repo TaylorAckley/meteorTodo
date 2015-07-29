@@ -26,7 +26,7 @@ Template.todoForm.events({
     console.log(newTodo);
 
     // create the new poll
-    Todos.insert(newTodo);
+    meteor.call("addTodo", newTodo);
   }
 
 });
