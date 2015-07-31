@@ -8,28 +8,3 @@ Template.todo.events({
         Meteor.call("deleteTodo", this._id);
       }
 });
-
-Template.todo.helpers({
-  settings: function() {
-    return {
-      position: "top",
-      limit: 5,
-      rules: [
-        {
-          token: '@',
-          collection: Todos,
-          field: "title",
-          template: Template.titlePill
-        },
-        {
-          token: 'tag:',
-          collection: Todos,
-          field: "tags",
-          options: '',
-          matchAll: true,
-          template: Template.dataPiece
-        }
-      ]
-    };
-  }
-});
