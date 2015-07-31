@@ -18,10 +18,13 @@
 
 <!-- LOOP OVER TODOS AND SHOW EACH -->
 <div class="container todoFormSec">
+    <div class="col-md-4">
+      {{> inputAutocomplete settings=settings id="msg" class="input-xlarge" placeholder="Search..."}}
+    </div>
   <div class="row">
-    <div class="col-md-8 pull-right">
-    <h1 class="todocountstyle text-right">You Have {{ todoCount }} Todos</h1>
-  </div>
+    <div class="col-md-5 pull-right">
+      <h1 class="todocountstyle text-right">You Have {{ todoCount }} Todos</h1>
+    </div>
   </div>
   <div class="row">
     <div class="col-md-12">

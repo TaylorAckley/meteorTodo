@@ -15,3 +15,5 @@ momentjs:moment
 iron:router
 utilities:avatar
 matteodem:easy-search
+sergeyt:typeahead
+mizzao:autocomplete
