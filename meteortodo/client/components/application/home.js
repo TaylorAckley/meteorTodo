@@ -1,7 +1,3 @@
-//Meteor.subscribe('theTodos');
-
-//http://matteodem.github.io/meteor-easy-search/docs/recipes/
-
 Template.home.helpers({
 
   todos: function() {
@@ -13,29 +9,6 @@ Template.home.helpers({
 
   todoCount: function() {
     return Todos.find({userid: Meteor.userId()}).count();
-  },
-
-  settings: function() {
-    return {
-      position: "top",
-      limit: 5,
-      rules: [
-        {
-          token: '@',
-          collection: Todos,
-          field: "title",
-          template: Template.titlePill
-        },
-        {
-          token: '#',
-          collection: Todos,
-          field: "categories",
-          options: '',
-          matchAll: true,
-          template: Template.dataPiece
-        }
-      ]
-    };
   }
 
 });

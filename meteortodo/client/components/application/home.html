@@ -19,11 +19,6 @@
 <!-- LOOP OVER TODOS AND SHOW EACH -->
 <div class="container todoFormSec">
   <div class="row">
-    <div class="col-md-4">
-      {{> esInput index="todos" placeholder="Search...!" }}
-    </div>
-  </div>
-  <div class="row">
     <div class="col-md-5 pull-right">
       <h1 class="todocountstyle text-right">You Have {{ todoCount }} Todos</h1>
     </div>
@@ -31,9 +26,9 @@
   <div class="row">
     <div class="col-md-12">
       <div class="todos">
-          {{ #esEach index="todos" }}
-              {{ >todo }}
-          {{ /esEach }}
+        {{ #each todos }}
+            {{ >todo }}
+        {{ /each }}
       </div>
       </div>
   </div>
