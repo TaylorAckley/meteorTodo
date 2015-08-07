@@ -1,4 +1,6 @@
-Meteor.subscribe('theTodos');
+//Meteor.subscribe('theTodos');
+
+//http://matteodem.github.io/meteor-easy-search/docs/recipes/
 
 Template.home.helpers({
 
