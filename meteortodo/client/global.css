@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans|Roboto|Slabo+27px|Montserrat:400,700|Lora:400,700,400italic,700italic);
 
+#menu:not( .mm-menu) {
+    display: none;
+}
+
 body {
   background: url(img/1.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -10,10 +14,6 @@ body {
   height: 100%;
 }
 
-.panel-default {
-opacity: 0.9;
-margin-top:30px;
-}
 .form-group.last { margin-bottom:0px; }
 
 
@@ -62,6 +62,8 @@ a:focus {
 }
 
 .navbar-custom {
+  top:0;
+  left: 0;
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
@@ -140,47 +142,27 @@ a:focus {
     }
 }
 
-.intro {
+.todoform {
     display: table;
     width: 100%;
     height: auto;
-    padding: 100px 0;
+    padding-left: 15px;
+    padding-right: 15px;
     text-align: center;
-    color: #fff;
-    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
 }
 
-.intro .intro-body {
+.todoform .todoform-body {
     display: table-cell;
     vertical-align: middle;
 }
 
-.intro .intro-body .brand-heading {
-    font-size: 40px;
-}
-
-.intro .intro-body .intro-text {
-    font-size: 18px;
-}
 
 @media(min-width:768px) {
-    .intro {
+    .todoform {
         height: 100%;
-        padding: 0;
+        padding: 15;
     }
 
-    .intro .intro-body .brand-heading {
-        font-size: 100px;
-    }
-
-    .intro .intro-body .intro-text {
-        font-size: 26px;
-    }
 }
 
 .btn-circle {
@@ -258,8 +240,13 @@ a:focus {
 }
 
 .content-section {
-    padding-top: 100px;
+    padding-top: 150px;
 }
+
+.content-section-2 {
+    padding-top: 50px;
+}
+
 
 .download-section {
     width: 100%;
@@ -281,7 +268,7 @@ a:focus {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 250px;
+        padding-top: 150px;
     }
 
     .download-section {
