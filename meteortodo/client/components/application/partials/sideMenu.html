@@ -1,9 +1,21 @@
 <template name="sideMenu">
 <nav id="menu">
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About us</a></li>
-        <li><a href="/contact/">Contact</a></li>
-    </ul>
+
+  <ul class="nav">
+      <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+      <li class="hidden">
+          <a href="#page-top"></a>
+      </li>
+      <li><a href="#close"><i class="fa fa-bars"></i> Close!!!</a></li>
+      <li>
+      {{ name }}
+    </li>
+      <li>
+          <a href="#" class="logout">Logout</a>
+      </li>
+      <li>
+          <a href="{{pathFor route='profile'}}" class="edit-profile">Edit Profile</a>
+      </li>
+  </ul>
   </nav>
 </template>

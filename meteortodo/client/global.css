@@ -14,7 +14,8 @@ body {
   height: 100%;
 }
 
-.form-group.last { margin-bottom:0px; }
+.form-group.control1 { margin-bottom:10px; }
+.form-group.control2 { margin-bottom:10px; }
 
 
 h1,

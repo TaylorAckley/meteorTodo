@@ -22,7 +22,7 @@ Router.onBeforeAction(function() {
 },
 
 {
-  only: ['/', 'register']
+  only: ['/']
 });
 
 Router.route('/home', function () {

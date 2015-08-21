@@ -8,10 +8,9 @@ meteor-platform
 twbs:bootstrap
 fortawesome:fontawesome
 accounts-password
-ian:accounts-ui-bootstrap-3
 accounts-twitter
 accounts-facebook
 momentjs:moment
 iron:router
-utilities:avatar
 joshdellay:jquery-mobile-menu
+email

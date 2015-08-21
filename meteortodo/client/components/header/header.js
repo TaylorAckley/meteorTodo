@@ -1,10 +1,12 @@
 Template.header.helpers({
 
+  name: function() {
+    return Meteor.user().profile.name;
+  }
+
 });
 
-UI.registerHelper("name", function() {
-  return Meteor.user().profile.name;
-});
+
 
 
 Template.header.events({

@@ -7,7 +7,12 @@ Template.login.events({
         Meteor.loginWithPassword(email,password,function(err){
             if(!err) {
                 Router.go('/home');
+            } else {
+              var message = "There was an error logging in: <strong>" + error.reason + "</strong>";
+
+                template.find('#form-messages').html(message);
             }
+
         });
     },
 
