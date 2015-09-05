@@ -4,30 +4,20 @@
 
 
 Accounts.onCreateUser(function(options, user) {
-    if (options.profile && user.services.facebook) {
-        options.profile.picture = "http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large";
-        user.profile = options.profile;
-    }
+    var userEmail = user.emails[0].address;
+    var fromEmail = "TaylorAckley@gmail.com";
+    var subject = "Welcome";
+    var emailTxt = "Welcome or something";
+    Meteor.call("sendEmail", userEmail, fromEmail, subject, emailTxt);
+    user.profile = options.profile;
     return user;
-    },
-
-    function(user) {
-      console.log("Sending user welcome email!");
-      console.log(user.user.emails[0].address);
-      var userEmail = user.user.emails[0].address;
-      var fromEmail = "TaylorAckley@gmail.com";
-      var subject = "Welcome";
-      var emailTxt = "Welcome or something";
-      Meteor.call("sendEmail", userEmail, fromEmail, subject, emailTxt);
-
-      return user;
-
     });
 
 
-Accounts.onLogin(function(user){
-    console.log(user.user._id);
+Accounts.onLogin(function(user) {
     Meteor.call("incrementLoginCnt", user.user._id);
-    console.log(user.user.loginCount);
+    console.log("Logging in user");
+    console.log(user);
+    console.log(user.user.profile.loginCount);
     return user;
 });

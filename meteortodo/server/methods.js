@@ -16,9 +16,10 @@ Meteor.methods({
 
   incrementLoginCnt: function (userId) {
       var currentUser = Meteor.users.findOne({_id: userId});
-
-      currentLoginCnt = currentUser.loginCount + 1;
-      console.log("Updating users login count from: " + currentUser.loginCount + " to: " + currentLoginCnt);
+      console.log(currentUser);
+      var currentLoginCnt = currentUser.profile.loginCount + 1;
+      console.log(currentLoginCnt);
+      console.log("Updating users login count from: " + currentUser.profile.loginCount + " to: " + currentLoginCnt);
     Meteor.users.update(currentUser, { $set: { loginCount: currentLoginCnt} });
 
   },

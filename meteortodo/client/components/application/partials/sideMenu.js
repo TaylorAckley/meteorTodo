@@ -7,7 +7,22 @@ Template.sideMenu.events({
     }
   });
 
+  Template.sideMenu.helpers({
+displayIDConn: function() {
+  console.log(this);
+  return this;
+
+},
+displayID: function() {
+  console.log(this.data.dataID);
+  return this.data.dataID;
+}
+    });
+
   Template.sideMenu.rendered = function() {
+    console.log(this.data.dataID);
+    var todoContext = Todos.findOne({_id:this.data.dataID});
+    console.log(todoContext);
     $("#menu").mmenu({
       classes: "mm-white",
         // mm-white mm-black mm-light
@@ -33,4 +48,5 @@ Template.sideMenu.events({
     },{
         transitionDuration: 100  // does not seem to work
     });
+
   };

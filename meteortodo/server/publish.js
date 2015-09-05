@@ -4,4 +4,4 @@ Meteor.publish('theTodos', function() {
   return Todos.find({userid: this.userId});
 });
 
-Meteor.publish('userData', function () { return Meteor.users.find({}, {fields: {profile: 1, services: 1}}); });
+Meteor.publish('userData', function () { return Meteor.users.find({_id: this.userId }, {fields: {profile: 1, services: 1}}); });

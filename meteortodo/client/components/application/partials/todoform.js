@@ -6,27 +6,53 @@ Template.todoForm.events({
     // stop the form from submitting
     event.preventDefault();
 
-    var CategoriesForm = event.target.category.value;
-    var categoriestoSplit = [];
-    categoriestoSplit = CategoriesForm.split(',');
-    console.log(categoriestoSplit);
+    var getNextSort = function() {
+        //TODO refactor this
+        var getLastCount = Todos.find({userid: Meteor.userId()}).count();
+        console.log(getLastCount);
+        if (getLastCount === 0) {
+        console.log("No sortOrder detected, returning default SO (1)");
+          return Number(1);
+        }
+        else {
+          var getLast = Todos.findOne({userid: Meteor.userId()}, {sort: {sortOrder: -1}});
+          var oldSortValue = getLast.sortOrder;
+          var nextSort = oldSortValue + 1;
+          console.log(nextSort);
+        return nextSort;
+        }
+    };
+
+    var categoriesJoined = ['inbox'].concat(event.target.category.value
+      .split(',')
+      .toLowerCase()
+      .map(function(category){ return category.trim(); })
+      .filter(function(category){ return !!category; }));
 
     // get the data we need from the form
     var newTodo = {
       title: event.target.title.value,
-      description: event.target.description.value,
-      due: event.target.due.value,
-      priority: event.target.priority.value,
-      categories: categoriestoSplit,
+      isComplete: false,
+      categories: categoriesJoined,
       userid: Meteor.userId(),
       CreatedOn: new Date(),
-      userList: 'default'
+      sortOrder: getNextSort()
 
     };
     console.log(newTodo);
 
-    // create the new poll
     Meteor.call("addTodo", newTodo);
+  }
+
+});
+
+Template.todoForm.helpers({
+  categoryTypeAheadVals: function() {
+    ca = Todos.find({}, {categories: 1}).fetch().map(function(it){ return it.categories; });
+    y = [];
+    y = y.concat.apply(y, ca);
+    console.log(y);
+    return y;
   }
 
 });

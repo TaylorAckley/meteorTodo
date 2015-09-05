@@ -1,25 +1,26 @@
 <template name="home">
 
       {{ >header }}
-      {{ >sideMenu }}
 
-<!-- PULL IN THE TODO CREATION FORM -->
-<section class=" content-section">
-<div class="container todoform">
-  <div class="row todoform-body">
-    <div class="col-md-12">
+<section class="content-section2">
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
       {{ >todoForm }}
+    </div>
+    <div class="col-md-4 pull-right">
+      {{ >filter }}
     </div>
   </div>
 </div>
 </section>
 
-<!-- LOOP OVER TODOS AND SHOW EACH -->
+
 <section class="content-section-2">
 <div class="container todoform">
   <div class="row">
     <div class="col-md-5 pull-right">
-      <h1 class="todocountstyle text-right">You Have {{ todoCount }} Todos</h1>
+      <h2 class="todocountstyle text-right"> {{ todoCount }}</h2>
     </div>
   </div>
   <div class="row">
@@ -33,7 +34,4 @@
   </div>
 </div>
 </section>
-
-
-
 </template>

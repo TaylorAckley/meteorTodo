@@ -3,10 +3,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5 col-md-offset-7">
-            <div class="panel panel-default">
+            <div class="panel-opacity panel panel-default">
                 <div class="panel-heading">
                     <span class="glyphicon glyphicon-lock"></span> Login</div>
                 <div class="panel-body">
+                  {{#with getLoginFlag }}
+                  <p class="warning">Please login again!</p>
+                  {{/with}}
                     <form class="login-form">
                     <div class="form-group">
                         <label for="Email" class="col-sm-3 control-label">
@@ -39,14 +42,6 @@
                         </div>
                       </div>
 
-                        <div class="form-group control2">
-                            <div class="col-sm-12">
-                              <a href="{{pathFor route='register'}}"><button type="button" class="btn btn-default btn-sm">Create Account</button></a>  <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#forgotPassword">
-                                Forgot Password
-                              </button>
-                            </div>
-
-                    </div>
                     </form>
                     <p id="form-messages"></p>
                 </div>

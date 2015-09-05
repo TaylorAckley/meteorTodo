@@ -1,4 +1,6 @@
 <template name="todo">
+  {{ >sideMenu dataID=_id }}
+  <a href="#" id="open">
   <div class="well todoentry" data-id="{{ _id }}">
     <ul class="text-center">
       <li class="check">
@@ -25,4 +27,5 @@
 
     </ul>
   </div>
+</a>
 </template>

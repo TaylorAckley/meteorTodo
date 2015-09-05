@@ -6,5 +6,11 @@ Template.todo.events({
       },
       "click .delete": function () {
         Meteor.call("deleteTodo", this._id);
+      },
+      'click #open': function () {
+        $("#menu").trigger("open.mm");
+      },
+      'click #close': function () {
+        $("#menu").trigger("close.mm");
       }
 });

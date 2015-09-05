@@ -14,3 +14,8 @@ momentjs:moment
 iron:router
 joshdellay:jquery-mobile-menu
 email
+mizzao:autocomplete
+matb33:collection-hooks
+aldeed:collection2
+sergeyt:typeahead
+underscorestring:underscore.string

@@ -1,6 +1,6 @@
 <template name="header">
 
-  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-custom" role="navigation">
       <div class="container">
           <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -19,13 +19,17 @@
                       <a href="#page-top"></a>
                   </li>
                   <li>
-                    {{ name }}
+                    <a href="{{pathFor route='profile'}}">
+                      {{currentUser._id }} //
+                      {{#with currentUser.profile.name }}
+                      @
+                    {{ currentUser.profile.name }}
+
+                    {{/with}}
+                  </a>
                 </li>
                   <li>
                       <a href="#" class="logout">Logout</a>
-                  </li>
-                  <li>
-                      <a href="{{pathFor route='profile'}}" class="edit-profile">Edit Profile</a>
                   </li>
               </ul>
           </div>

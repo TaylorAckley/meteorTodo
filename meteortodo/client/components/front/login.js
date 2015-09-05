@@ -36,3 +36,9 @@ Template.login.events({
 
 
 });
+
+Template.login.helpers({
+  getLoginFlag: function(){
+    return Router.current().params.hash;
+  }
+});

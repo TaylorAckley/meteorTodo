@@ -1,6 +1,6 @@
 Template.header.helpers({
 
-  name: function() {
+  userName: function() {
     return Meteor.user().profile.name;
   }
 

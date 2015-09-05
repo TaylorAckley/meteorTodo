@@ -1,21 +1,9 @@
 <template name="sideMenu">
 <nav id="menu">
-
-  <ul class="nav">
-      <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-      <li class="hidden">
-          <a href="#page-top"></a>
-      </li>
-      <li><a href="#close"><i class="fa fa-bars"></i> Close!!!</a></li>
-      <li>
-      {{ name }}
-    </li>
-      <li>
-          <a href="#" class="logout">Logout</a>
-      </li>
-      <li>
-          <a href="{{pathFor route='profile'}}" class="edit-profile">Edit Profile</a>
-      </li>
-  </ul>
-  </nav>
+<h4>{{ todoContext._id }}... or1 {{ todoContext.title }}</h4>
+<h4>{{ this._id }}... or2 {{ this }}</h4>
+<h4>{{ title }}... or3 {{ this.data.dataID }}</h4>
+<h4>{{ todoContext._id }}... or1 {{ todoContext.title }}</h4>
+<h4>{{ todoContext._id }}... or1 {{ todoContext }}</h4>
+</nav>
 </template>

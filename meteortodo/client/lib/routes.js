@@ -1,7 +1,7 @@
 Router.onBeforeAction(function() {
 
   if (! Meteor.userId()) {
-    this.render('login');
+    this.redirect('/#auth');
   }
   else {
     this.next();
@@ -14,7 +14,7 @@ Router.onBeforeAction(function() {
 
 Router.onBeforeAction(function() {
   if (Meteor.userId()) {
-    this.render('home');
+    this.redirect('home');
   }
   else {
     this.next();
